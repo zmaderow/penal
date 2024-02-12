@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora Penal</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+</head>
+
+<body>
+        <main>
+                <nav></nav>
+                <div id="dropdownDiv">
+                        <div id="dropdown">
+                                <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
+                                <div id="myDropdown" class="dropdown-content">
+                                        <input type="text" placeholder="Buscar artigo" id="searchArtigo"
+                                                onkeyup="filterFunction()" onfocus="showList()">
+                                        <div id="optionsList">
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('1 - Homicídio doloso', 200, 300, -99999)">1 -
+                                                        Homicídio doloso</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('2 - Homicídio culposo', 150, 100, -99999)">2 -
+                                                        Homicídio culposo</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('3 - Homicídio doloso qualificado', 300, 250, -99999)">3
+                                                        - Homicídio doloso qualificado</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('4 - Lesão corporal', 90, 100, -99999)">4 -
+                                                        Lesão corporal</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('5 - Ameaça', 100, 200, 300)">5 - Ameaça</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('6 - Sequestro', 130, 250, -99999)"> 6 -
+                                                        Sequestro</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('7 - Tortura', 150, 300, -99999)">7 -
+                                                        Tortura</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('8 - Calúnia', 50, 100, 150)">8 - Calúnia</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('9 - Injúria', 70, 150, 220)">9 - Injúria</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('10 - Difamação', 100, 200, 300)">10 -
+                                                        Difamação</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('11 - Assédio', 80, 270, 220)">11 - Assédio</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('12 - Ocultação da face', 0, 150, 0)">12 -
+                                                        Ocultação da face</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('13 - Falsa comunicação de crime', 50, 100, 200)">13
+                                                        - Falsa comunicação de crime</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('14 - Perturbação do sossego', 30, 200, 300)">14
+                                                        - Perturbação do sossego</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('15 - Direção perigosa', 150, 200, 300)">15 -
+                                                        Direção perigosa</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('16 - Não responder / comparecer a intimação judicial', 0, 2000, 0)">16
+                                                        - Não responder / comparecer a intimação judicial</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('17 - Atentado ao pudor', 100, 250, 375)">17 -
+                                                        Atentado ao pudor</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('18 - Apologia ao crime', 70, 150, -99999)">18
+                                                        - Apologia ao crime</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('19 - Omissão de socorro', 50, 150, 225)">19 -
+                                                        Omissão de socorro</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('20 - Tentativa de fuga', 100, 300, 450)">20 -
+                                                        Tentativa de fuga</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('21 - Cúmplice', 100, 300, 450)">21 -
+                                                        Cúmplice</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('22 - Exposição de arma de fogo', 150, 300, 450)">22
+                                                        - Exposição de arma de fogo</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('23 - Desacato', 100, 450, -99999)">23 -
+                                                        Desacato</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('24 - Desobediência a ordem policial', 100, 300, 450)">24
+                                                        - Desobediência a ordem policial</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('25 - Terrorismo', 50, 100, 150)">25 -
+                                                        Terrorismo</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('26 - Uso ilegitimo de uniforme ou distintivo', 50, 100, 150)">26
+                                                        - Uso ilegitimo de uniforme ou distintivo</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('27 - Exercício ilegal da profissão ou atividade', 50, 100, 450)">27
+                                                        - Exercício ilegal da profissão ou atividade</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('28 - Omissão de comunicação de crime', 60, 150, 225)">28
+                                                        - Omissão de comunicação de crime</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('29 - Recusa de dados sobre a própria identidade', 0, 150, 0)">29
+                                                        - Recusa de dados sobre a própria identidade</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('30 - Uso de traje militar', 0, 150, 0)">30 -
+                                                        Uso de traje militar</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('31 - Porte de armamento leve', 100, 300, -99999)">31
+                                                        - Porte de armamento leve</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('32 - Porte de armamento médio', 150, 400, -99999)">32
+                                                        - Porte de armamento médio</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('33 - Porte de armamento pesado', 200, 500, -99999)">33
+                                                        - Porte de armamento pesado</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('34 - Posse de munição (-100)', 60, 200, -99999)">34
+                                                        - Posse de munição (-100)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('35 - Corrupção ativa', 150, 200, -99999)">35 -
+                                                        Corrupção ativa</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('36 - Corrupção passiva', 150, 200, -99999)">36
+                                                        - Corrupção passiva</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('37 - Obstrução de justiça', 150, 250, -99999)">37
+                                                        - Obstrução de justiça</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('38 - Formação de quadrilha', 100, 150, -99999)">38
+                                                        - Formação de quadrilha</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('39 - Dano a patrimônio público', 30, 70, 100)">39
+                                                        - Dano a patrimônio público</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('40 - Furto', 50, 100, 150)">40 - Furto</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('41 - Roubo', 70, 150, 225)">41 - Roubo</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('42 - Receptação', 50, 100, 150)">42 -
+                                                        Receptação</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('43 - Invasão de propriedade privada', 30, 150, 225)">43
+                                                        - Invasão de propriedade privada</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('44 - Desmanche de veículos', 30, 100, 150)">44
+                                                        - Desmanche de veículos</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('45 - Tentativa de furto', 35, 30, 65)">45 -
+                                                        Tentativa de furto</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('46 - Apropriação indébita', 30, 30, 55)">46 -
+                                                        Apropriação indébita</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('47 - Extorsão', 60, 65, 35)">47 -
+                                                        Extorsão</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('48 - Estelionato', 100, 150, 200)">48 -
+                                                        Estelionato</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('49 - Posse de gatilhos (+200)', 50, 250, 375)">49
+                                                        - Posse de gatilhos (+200)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('50 - Posse de molas (+200)', 50, 250, 375)">50
+                                                        - Posse de molas (+200)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('51 - Posse de peças de arma (+200)', 50, 250, 375)">51
+                                                        - Posse de peças de arma (+200)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('52 - Posse de cápsulas (+200)', 50, 250, 375)">52
+                                                        - Posse de cápsulas (+200)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('53 - Posse de etiquetas (+100)', 50, 250, 375)">53
+                                                        - Posse de etiquetas (+100)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('54 - Posse de componentes narcóticos', 50, 250, 375)">54
+                                                        - Posse de componentes narcóticos</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('55 - Posse de pólvora (+100)', 50, 250, 375)">55
+                                                        - Posse de pólvora (+100)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('56 - Posse de alvejante (+50)', 50, 250, 375)">56
+                                                        - Posse de alvejante (+50)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('57 - Posse de keycard (+100)', 50, 250, 375)">57
+                                                        - Posse de keycard (+100)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('58 - Posse de tickets (+20)', 50, 250, 375)">58
+                                                        - Posse de tickets (+20)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('59 - Tráfico de drogas (+15)', 70, 250, 375)">59
+                                                        - Tráfico de drogas (+15)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('60 - Usuário de drogas (+10)', 0, 150, 0)">60
+                                                        - Usuário de drogas (+10)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('61 - Posse de dinheiro sujo (até 100k)', 50, 200, 300)">61
+                                                        - Posse de dinheiro sujo (até 100k)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('62 - Posse de dinheiro sujo (até 250k)', 100, 400, 600)">62
+                                                        - Posse de dinheiro sujo (até 250k)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('63 - Posse de dinheiro sujo (acima de 250k)', 150, 500, 750)">63
+                                                        - Posse de dinheiro sujo (acima de 250k)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('64 - Tráfico de munição (+100)', 100, 225, 350)">64
+                                                        - Tráfico de munição (+100)</a>
+                                                <a class="option" href="#"
+                                                        onclick="calcAdd('65 - Tráfico de armamento (venda)', 150, 250, -99999)">65
+                                                        - Tráfico de armamento (venda)</a>
+                                        </div>
+                                </div>
+                        </div>
+                        <div id="artigos">
+                                <span id="baseBox"></span>
+
+                        </div>
+                </div>
+                <div id="resultsDiv">
+                        <div id="text">
+                                <p>Desconto:
+                                        <span class="highlight">
+                                                <input type="number" name="desconto" id="desconto" min="0" max="100"
+                                                        step="10" value="0" onchange="addDesconto('meses')">%
+                                        </span>
+                                </p>
+                                <p>Total de meses:
+                                        <span id="mesesSpan" class="highlight">0</span>
+                                </p>
+                                <p>Multa:
+                                        <span id="multaSpan" class="highlight">0</span>
+                                </p>
+                                <hr>
+                                <p>Desconto fiança:
+                                        <span class="highlight">
+                                                <input type="number" name="descontoFianca" id="descontoFianca" min="0"
+                                                        max="100" step="10" value="0" onchange="addDesconto('fianca')">%
+                                        </span>
+                                </p>
+                                <p>Fiança:
+                                        <span id="fiancaSpan" class="highlight">0</span>
+                                </p>
+                        </div>
+                        <button id="copy" onclick="genPrender()">Copiar /prender</button>
+                </div>
+        </main>
+        <p id="version">v1.3.6</p>
+</body>
+
+<script>
+
+        function filterFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("searchArtigo");
+                filter = input.value.toUpperCase();
+                div = document.getElementById("optionsList");
+                a = div.getElementsByTagName("a");
+                for (i = 0; i < a.length; i++) {
+                        txtValue = a[i].textContent || a[i].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = "";
+                        } else {
+                                a[i].style.display = "none";
+                        }
+                }
+        }
+
+        function showList() {
+                document.querySelector("#optionsList").style.display = "block"
+        }
+
+
+        desconto = 0
+        multaTotal = 0
+        mesesTotal = 0
+        fiancaTotal = 0
+
+        multaDesconto = 0
+        mesesDesconto = 0
+        fiancaDesconto = 0
+
+
+        function addDesconto(tipo) {
+                if (tipo == "meses") {
+                        desconto = document.querySelector("#desconto").value
+
+                        mesesDesconto = Math.floor(mesesTotal * (1 - (desconto / 100)))
+                        multaDesconto = Math.floor(multaTotal * (1 - (desconto / 100)))
+
+
+                        document.getElementById("mesesSpan").innerHTML = `${mesesTotal} (${mesesDesconto})`
+                        document.getElementById("multaSpan").innerHTML = `${ multaTotal}k (${multaDesconto}k)`
+                }
+                else if (tipo == "fianca") {
+                        desconto = document.querySelector("#descontoFianca").value
+                        fiancaDesconto = Math.floor(fiancaTotal * (1 - (desconto / 100)))
+
+                        if (fiancaTotal >= 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k (${fiancaDesconto}k)`
+                        } else {
+                                document.getElementById("fiancaSpan").innerHTML = `Sem direito`
+                        }
+                        document.querySelector("#optionsList").style.display = "none"
+                }
+        }
+
+        function removeArtigo(id) {
+                auxMeses = 0 - Number(document.getElementById(`mesesID${id}`).textContent)
+                auxMulta = 0 - Number(document.getElementById(`multaID${id}`).textContent)
+                auxFianca = 0 - Number(document.getElementById(`fiancaID${id}`).textContent.substring(0, (document.getElementById(`fiancaID${id}`).textContent.length) - 1))
+                if (Number.isNaN(auxFianca)) { auxFianca = 99999 }
+                calcAdd(-1, auxMeses, auxMulta, auxFianca)
+                document.getElementById(`art${id}`).remove()
+        }
+
+
+        function calcAdd(artigo, meses, multa, fianca) {
+                id = Number(artigo[0])
+
+                if (id > 0) {
+
+                        document.getElementById("baseBox").insertAdjacentHTML("afterend", `<div id="art${id}" class="box">
+                    <div class="boxTop">
+                        <p>${artigo}</p>
+                        <a href="#" onclick="removeArtigo(${id})" class="rmBtn">Remover</a>
+                    </div>
+                    <div class="penaArtigo">
+                        <p>Meses: <span class="highlight" id='mesesID${id}'>${meses}</span></p>
+                        <p>Multa: <span class="highlight" id='multaID${id}'>${multa}</span>k</p>
+                        <p>Fiança: <span class="highlight" id='fiancaID${id}'>${(fianca == -99999) ? 'Sem direiro' : fianca + 'k'}</span></p>
+                    </div>
+                </div>`)
+                }
+                else if (id == -1) pass
+
+
+                multaTotal = multaTotal + multa
+                mesesTotal = mesesTotal + meses
+                fiancaTotal = fiancaTotal + fianca
+
+                if (desconto <= 0) {
+                        document.getElementById("mesesSpan").innerHTML = `${mesesTotal}`
+                        document.getElementById("multaSpan").innerHTML = `${multaTotal}k`
+
+                        if (fiancaTotal >= 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k`
+                        } else {
+                                document.getElementById("fiancaSpan").innerHTML = `Sem direito`
+                        }
+                        document.querySelector("#optionsList").style.display = "none"
+                }
+                else if (desconto > 0) {
+                        mesesDesconto = Math.floor(mesesTotal * (1 - (desconto / 100)))
+                        multaDesconto = Math.floor(multaTotal * (1 - (desconto / 100)))
+
+                        document.getElementById("mesesSpan").innerHTML = `${mesesTotal} (${mesesDesconto})`
+                        document.getElementById("multaSpan").innerHTML = `${multaTotal}k (${multaDesconto})`
+
+                        if (fiancaTotal >= 0 && fiancaDesconto != 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k (${fiancaDesconto}k)`
+                        } else if (fiancaTotal >= 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k`
+                        } else {
+                                document.getElementById("fiancaSpan").innerHTML = `Sem direito`
+                        }
+                        document.querySelector("#optionsList").style.display = "none"
+                }
+
+                document.querySelector("#searchArtigo").value = ""
+                filterFunction()
+        }
+
+        async function genPrender() {
+                try {
+                        await navigator.clipboard.writeText(`prender {id} ${mesesDesconto || mesesTotal} ${(multaDesconto * 1000) || (multaTotal * 1000)}`);
+                }
+                catch (e) {
+                        console.log(e);
+                }
+        }
+
+</script>
+
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        #searchArtigo {
+                box-sizing: border-box;
+                font-size: 16px;
+                padding: 1rem 2rem;
+                border: 2px solid #FFD500;
+                border-radius: 15px;
+                background-color: #00183F;
+                color: rgba(255, 255, 255, 0.50);
+                width: 100%;
+        }
+
+        #searchArtigo:focus {
+                outline: none;
+                color: #ffff;
+        }
+
+        .dropdown {
+                position: relative;
+                display: inline-block;
+        }
+
+        .dropdown-content {
+                position: absolute;
+                min-width: 41vw;
+                overflow: auto;
+                z-index: 1;
+        }
+
+        #optionsList {
+                display: none;
+                background-color: #00183F;
+                max-height: 50vh;
+                overflow-y: scroll;
+
+        }
+
+        #optionsList a {
+                text-decoration: none;
+                color: #FFF;
+                display: block;
+                padding: 1rem .5rem;
+        }
+
+        #optionsList a:hover {
+                background-color: #FFD500;
+                color: #000A1A;
+        }
+
+        /* #searchArtigo:focus+#optionsList {
+    display: block
+} */
+        hr {
+                background-color: #FFD500;
+                border-radius: 25px;
+                border: 2px solid #FFD500;
+        }
+
+        .boxTop {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+        }
+
+        .rmBtn {
+                display: inline;
+                color: #ffff;
+                text-decoration: none;
+                border: 2px solid red;
+                background-color: red;
+                padding: .3rem 1rem;
+                border-radius: 15px;
+        }
+
+        #desconto,
+        #descontoFianca {
+                background-color: transparent;
+                border: none;
+                color: #FFD500;
+                font-size: 35px;
+                font-family: inter;
+                font-weight: 600;
+                width: 5rem;
+                text-align: end;
+        }
+
+        #desconto:focus,
+        #descontoFianca:focus {
+                outline: none;
+        }
+
+
+
+        body {
+                transition: .3s;
+                background-color: #000A1A;
+                color: #FFFF;
+                display: flex;
+                flex-direction: row;
+                width: 99vw;
+                height: 95vh;
+                flex-wrap: nowrap;
+                font-family: inter;
+        }
+
+        main {
+                display: flex;
+                flex-direction: row;
+                width: 99vw;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 6rem;
+        }
+
+        #dropdownDiv {
+                width: 45%;
+        }
+
+        .highlight {
+                color: #FFD500;
+        }
+
+        #copy {
+                border: 2px solid #FFD500;
+                background-color: #FFD500;
+                color: #000A1A;
+                border-radius: 15px;
+                padding: 1rem 2rem;
+                font-family: Inter;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+        }
+
+        #text p {
+                color: #FFF;
+                font-family: Inter;
+                font-size: 35px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+        }
+
+        #resultsDiv {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+        }
+
+        .box {
+                border-radius: 16px;
+                background-color: #00183F;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 1rem 2rem;
+                width: 85%;
+                margin-bottom: 1rem;
+        }
+
+        .penaArtigo {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+        }
+
+        #artigos {
+                height: 50vh;
+                overflow-y: scroll;
+                margin-top: 8vh;
+        }
+
+
+
+
+        /* width */
+        ::-webkit-scrollbar {
+                width: 7px;
+                height: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+                background: #00183F;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+                background: #FFD500;
+                border-radius: 40px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+                background: #FFD500;
+        }
+
+        #version {
+                position: absolute;
+                bottom: 1vh;
+                right: 1vw;
+                color: #818181;
+        }
+</style>
+
+</html>
